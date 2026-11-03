@@ -28,16 +28,16 @@ const WEBIN_CONFIG = {
   },
 
   MOTIVATIONAL_QUOTES: [
-    "Dream big. Start small. Act now. ✨",
-    "Focus on progress, not perfection. ✨",
-    "The secret of getting ahead is getting started. ✨",
-    "Small daily steps lead to stunning results. ✨",
-    "Make today count. ✨",
-    "Stay curious, stay inspired. ✨",
-    "Your potential is endless. Go make it happen. ✨",
-    "Turn your ideas into reality. ✨",
-    "Consistency creates momentum. ✨",
-    "Believe in yourself and take the leap. ✨",
+    "Dream big. Start small. Act now.",
+    "Focus on progress, not perfection.",
+    "The secret of getting ahead is getting started.",
+    "Small daily steps lead to stunning results.",
+    "Make today count.",
+    "Stay curious, stay inspired.",
+    "Your potential is endless. Go make it happen.",
+    "Turn your ideas into reality.",
+    "Consistency creates momentum.",
+    "Believe in yourself and take the leap.",
   ],
 
   getRandomQuote() {

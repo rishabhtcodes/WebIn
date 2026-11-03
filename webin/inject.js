@@ -181,8 +181,7 @@
 
     const footer = document.createElement("div");
     footer.className = "footer";
-    footer.textContent =
-      "Powered by caffeine and creativity — Rishabh ☕";
+    footer.textContent = (typeof WEBIN_CONFIG !== "undefined" && WEBIN_CONFIG.getRandomQuote) ? WEBIN_CONFIG.getRandomQuote() : "Dream big. Start small. Act now.";
     wrapper.appendChild(footer);
 
     const resizerSE = document.createElement("div");

@@ -5,9 +5,6 @@
 // License  : MIT License -- free to use, modify, and distribute.
 //            See LICENSE file in the project root for full license text.
 // ----------------------------------------------------------------------------
-// If this project helped you, consider starring the repository, opening a
-// pull request, or reporting issues on GitHub. Contributions are welcome.
-// ----------------------------------------------------------------------------
 //
 // state.js -- Application State Manager
 // ===========================================================
@@ -19,8 +16,9 @@
 //   - Favicon URL resolution with custom icon override support.
 //
 // State lifecycle:
-//   - On first load, initializes from WEBIN_CONFIG defaults.
-//   - On subsequent loads, restores from chrome.storage.local.
+//   - On first load, initializes from WEBIN_CONFIG defaults (0 apps).
+//   - Cleans up legacy v1 storage to wipe previous default apps.
+//   - On subsequent loads, restores from chrome.storage.local (v2).
 //   - Validates stored data integrity and resets if corrupt.
 // ----------------------------------------------------------------------------
 
@@ -34,8 +32,8 @@ const WebInState = {
     if (chrome && chrome.storage && chrome.storage.local) {
       chrome.storage.local.set(
         {
-          webhub_tabs_v1: this.tabs,
-          webhub_tabContent_v1: this.tabContent,
+          webhub_tabs_v2: this.tabs,
+          webhub_tabContent_v2: this.tabContent,
         },
         () => {
           if (chrome.runtime.lastError) {
@@ -68,7 +66,7 @@ const WebInState = {
     }
 
     chrome.storage.local.get(
-      ["webhub_tabs_v1", "webhub_tabContent_v1"],
+      ["webhub_tabs_v2", "webhub_tabContent_v2"],
       (result) => {
         if (chrome.runtime.lastError) {
           console.error(
@@ -76,9 +74,9 @@ const WebInState = {
             chrome.runtime.lastError
           );
           this.initializeDefaultState();
-        } else if (result.webhub_tabs_v1 && result.webhub_tabContent_v1) {
-          this.tabs = result.webhub_tabs_v1;
-          this.tabContent = result.webhub_tabContent_v1;
+        } else if (result.webhub_tabs_v2 && result.webhub_tabContent_v2) {
+          this.tabs = result.webhub_tabs_v2;
+          this.tabContent = result.webhub_tabContent_v2;
           if (
             !Array.isArray(this.tabs) ||
             typeof this.tabContent !== "object" ||
@@ -88,6 +86,8 @@ const WebInState = {
             this.initializeDefaultState();
           }
         } else {
+          // If upgrading or clean start, remove legacy v1 stored default apps
+          chrome.storage.local.remove(["webhub_tabs_v1", "webhub_tabContent_v1"]);
           this.initializeDefaultState();
         }
         callback();

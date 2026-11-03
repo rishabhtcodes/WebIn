@@ -21,7 +21,7 @@
 // ----------------------------------------------------------------------------
 
 const WEBIN_STYLES = `
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+/* Offline local font family */
 
 * {
   box-sizing: border-box !important;

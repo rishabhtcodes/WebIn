@@ -106,7 +106,7 @@
     titleContainer.style.cssText =
       "display:flex; align-items:center; gap:10px;";
     titleContainer.innerHTML = `
-      <img src="https://img.icons8.com/?size=200&id=nDNCmmDBtU8l&format=png" class="header-logo">
+      <img src="${chrome.runtime.getURL('images/icon-32.png')}" class="header-logo" alt="WebIn">
       <span class="header-title">WebIn</span>
     `;
 

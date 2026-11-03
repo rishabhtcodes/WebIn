@@ -12,6 +12,7 @@
 //   - Fallback icon SVG for apps whose favicons fail to load.
 //   - Default tab categories (clean start with no pre-loaded apps).
 //   - Clean default tab content with 0 apps.
+//   - Rotating motivational quotes for the footer.
 // ----------------------------------------------------------------------------
 
 const WEBIN_CONFIG = {
@@ -24,5 +25,24 @@ const WEBIN_CONFIG = {
 
   DEFAULT_TAB_CONTENT: {
     "General": [],
+  },
+
+  MOTIVATIONAL_QUOTES: [
+    "Dream big. Start small. Act now. ✨",
+    "Focus on progress, not perfection. ✨",
+    "The secret of getting ahead is getting started. ✨",
+    "Small daily steps lead to stunning results. ✨",
+    "Make today count. ✨",
+    "Stay curious, stay inspired. ✨",
+    "Your potential is endless. Go make it happen. ✨",
+    "Turn your ideas into reality. ✨",
+    "Consistency creates momentum. ✨",
+    "Believe in yourself and take the leap. ✨",
+  ],
+
+  getRandomQuote() {
+    return this.MOTIVATIONAL_QUOTES[
+      Math.floor(Math.random() * this.MOTIVATIONAL_QUOTES.length)
+    ];
   },
 };

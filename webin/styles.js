@@ -5,16 +5,13 @@
 // License  : MIT License -- free to use, modify, and distribute.
 //            See LICENSE file in the project root for full license text.
 // ----------------------------------------------------------------------------
-// If this project helped you, consider starring the repository, opening a
-// pull request, or reporting issues on GitHub. Contributions are welcome.
-// ----------------------------------------------------------------------------
 //
 // styles.js -- Core Stylesheet (Part 1 of 3)
 // ===========================================================
 // Contains the primary CSS rules for the WebIn overlay UI, injected into
 // the Shadow DOM to avoid conflicts with host page styles. Includes:
-//   - Base reset and IBM Plex Mono font import.
-//   - Wrapper, header, and close button styling.
+//   - Base reset and system monospace font settings.
+//   - Wrapper, header (purple-to-energetic-pink gradient), and close button styling.
 //   - Navigation tabs with horizontal scrolling.
 //   - Search bar and action button styles.
 //   - Card image, modal input, and animation keyframes.
@@ -27,7 +24,7 @@ const WEBIN_STYLES = `
   box-sizing: border-box !important;
   margin: 0 !important;
   padding: 0 !important;
-  font-family: 'IBM Plex Mono', 'Consolas', monospace !important;
+  font-family: 'Consolas', 'Courier New', monospace !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
@@ -37,8 +34,8 @@ const WEBIN_STYLES = `
   max-width: 900px;
   height: 70vh;
   min-height: 520px;
-  background: #f5f5dc !important;
-  color: #333 !important;
+  background: #fdf4ff !important;
+  color: #2e1065 !important;
   border-radius: 0 !important;
   box-shadow: 4px 4px 0px #000 !important;
   display: flex !important;
@@ -50,7 +47,7 @@ const WEBIN_STYLES = `
 }
 
 .header {
-  background: linear-gradient(90deg, #8b4513, #a0522d) !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%) !important;
   padding: 12px 16px !important;
   display: flex !important;
   justify-content: space-between !important;
@@ -71,7 +68,7 @@ const WEBIN_STYLES = `
   font-size: 14px !important;
   color: #fff !important;
   text-transform: uppercase !important;
-  letter-spacing: 1px !important;
+  letter-spacing: 1.5px !important;
 }
 
 .close {
@@ -101,13 +98,13 @@ const WEBIN_STYLES = `
 }
 
 .close:hover svg {
-  fill: #8b4513 !important;
+  fill: #ec4899 !important;
 }
 
 .nav {
   display: flex !important;
   padding: 10px !important;
-  background: #e8e8c8 !important;
+  background: #fae8ff !important;
   align-items: center !important;
   border-bottom: 2px solid #000 !important;
 }
@@ -128,44 +125,46 @@ const WEBIN_STYLES = `
 }
 
 .nav-tabs::-webkit-scrollbar-track {
-  background: #d5d5b5 !important;
+  background: #f3e8ff !important;
 }
 
 .nav-tabs::-webkit-scrollbar-thumb {
-  background: #8b4513 !important;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899) !important;
 }
 
 .nav button {
   line-height: 1.4 !important;
   padding: 6px 12px !important;
   font-size: 11px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   border: 1px solid #000 !important;
   border-radius: 0 !important;
   cursor: pointer !important;
   background: #fff !important;
-  color: #666 !important;
-  box-shadow: 2px 2px 0px #888 !important;
+  color: #6b21a8 !important;
+  box-shadow: 2px 2px 0px #d8b4fe !important;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
   flex-shrink: 0 !important;
   text-transform: uppercase !important;
 }
 
 .nav button:hover {
-  background: #e8e8c8 !important;
-  color: #333 !important;
+  background: #fdf2f8 !important;
+  color: #db2777 !important;
+  border-color: #ec4899 !important;
 }
 
 .nav button.active {
-  background: #333 !important;
+  background: linear-gradient(135deg, #7c3aed, #ec4899) !important;
   color: #fff !important;
   border-color: #000 !important;
+  box-shadow: 2px 2px 0px #000 !important;
 }
 
 .nav.delete-mode .nav-tabs button {
-  background: #f8d7da !important;
-  color: #721c24 !important;
-  border-color: #721c24 !important;
+  background: #fce7f3 !important;
+  color: #be185d !important;
+  border-color: #be185d !important;
   cursor: crosshair !important;
 }
 
@@ -174,7 +173,7 @@ const WEBIN_STYLES = `
   align-items: center;
   gap: 8px;
   padding: 10px 12px !important;
-  background: #e8e8c8 !important;
+  background: #fae8ff !important;
   border-bottom: 2px solid #000 !important;
 }
 
@@ -188,18 +187,18 @@ const WEBIN_STYLES = `
   outline: none !important;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
   background-color: #fff !important;
-  color: #333 !important;
-  font-family: 'IBM Plex Mono', monospace !important;
+  color: #2e1065 !important;
+  font-family: 'Consolas', 'Courier New', monospace !important;
 }
 
 .search-input::placeholder {
-  color: #666 !important;
-  opacity: 1 !important;
+  color: #a855f7 !important;
+  opacity: 0.8 !important;
 }
 
 .search-input:focus {
-  border-color: #8b4513 !important;
-  box-shadow: 2px 2px 0px #8b4513 !important;
+  border-color: #ec4899 !important;
+  box-shadow: 2px 2px 0px #7c3aed !important;
 }
 
 .action-btn {
@@ -215,7 +214,7 @@ const WEBIN_STYLES = `
   flex-shrink: 0;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 2px 2px 0px #888 !important;
+  box-shadow: 2px 2px 0px #d8b4fe !important;
 }
 
 .card img {
@@ -235,14 +234,14 @@ const WEBIN_STYLES = `
   border-radius: 0 !important;
   font-size: 13px !important;
   background: #fff !important;
-  color: #333 !important;
-  font-family: 'IBM Plex Mono', monospace !important;
+  color: #2e1065 !important;
+  font-family: 'Consolas', 'Courier New', monospace !important;
 }
 
 .modal-input:focus, .modal-select:focus {
   outline: none !important;
-  border-color: #8b4513 !important;
-  box-shadow: 2px 2px 0px #8b4513 !important;
+  border-color: #ec4899 !important;
+  box-shadow: 2px 2px 0px #7c3aed !important;
 }
 
 @keyframes fadeIn {

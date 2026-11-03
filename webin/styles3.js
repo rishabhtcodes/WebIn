@@ -5,9 +5,6 @@
 // License  : MIT License -- free to use, modify, and distribute.
 //            See LICENSE file in the project root for full license text.
 // ----------------------------------------------------------------------------
-// If this project helped you, consider starring the repository, opening a
-// pull request, or reporting issues on GitHub. Contributions are welcome.
-// ----------------------------------------------------------------------------
 //
 // styles3.js -- Modal and Card Menu Stylesheet (Part 3 of 3)
 // ===========================================================
@@ -25,16 +22,16 @@ const WEBIN_STYLES_PART3 = `
   font-size: 16px !important;
   font-weight: 600 !important;
   margin-bottom: 6px !important;
-  color: #333 !important;
+  color: #4c1d95 !important;
   line-height: 1.4 !important;
   text-transform: uppercase !important;
-  border-bottom: 2px solid #000 !important;
+  border-bottom: 2px solid #ec4899 !important;
   padding-bottom: 8px !important;
 }
 
 .modal-message {
   font-size: 13px !important;
-  color: #666 !important;
+  color: #581c87 !important;
   margin-bottom: 16px !important;
   line-height: 1.5 !important;
 }
@@ -56,36 +53,37 @@ const WEBIN_STYLES_PART3 = `
   line-height: 1.4 !important;
   text-transform: uppercase !important;
   font-size: 11px !important;
-  font-family: 'IBM Plex Mono', monospace !important;
-  box-shadow: 2px 2px 0px #888 !important;
+  font-family: 'Consolas', 'Courier New', monospace !important;
+  box-shadow: 2px 2px 0px #000 !important;
 }
 
 .modal-button.primary {
-  background: #8b4513 !important;
+  background: linear-gradient(135deg, #7c3aed, #ec4899) !important;
   color: #fff !important;
-  border-color: #8b4513 !important;
+  border-color: #000 !important;
 }
 
 .modal-button.primary:hover {
-  background: #a0522d !important;
+  background: linear-gradient(135deg, #6d28d9, #db2777) !important;
   transform: translateY(-1px) !important;
   box-shadow: 3px 3px 0px #000 !important;
 }
 
 .modal-button.secondary {
   background: #fff !important;
-  color: #333 !important;
+  color: #4c1d95 !important;
 }
 
 .modal-button.secondary:hover {
-  background: #e8e8c8 !important;
+  background: #fae8ff !important;
+  color: #ec4899 !important;
 }
 
 .card-menu-btn {
   position: absolute !important;
   top: 4px !important;
   right: 4px !important;
-  background: #e8e8c8 !important;
+  background: #fae8ff !important;
   border: 1px solid #000 !important;
   border-radius: 0 !important;
   width: 22px !important;
@@ -104,7 +102,7 @@ const WEBIN_STYLES_PART3 = `
 }
 
 .card-menu-btn:hover {
-  background: #8b4513 !important;
+  background: linear-gradient(135deg, #7c3aed, #ec4899) !important;
 }
 
 .card-menu-btn:hover svg {
@@ -114,7 +112,7 @@ const WEBIN_STYLES_PART3 = `
 .card-menu-btn svg {
   width: 14px !important;
   height: 14px !important;
-  fill: #333 !important;
+  fill: #6b21a8 !important;
 }
 
 .modal-form-group {
@@ -125,25 +123,25 @@ const WEBIN_STYLES_PART3 = `
   display: block !important;
   font-size: 11px !important;
   font-weight: 600 !important;
-  color: #666 !important;
+  color: #4c1d95 !important;
   margin-bottom: 5px !important;
   text-transform: uppercase !important;
 }
 
 .modal-button.danger {
   background: #fff !important;
-  color: #721c24 !important;
-  border-color: #721c24 !important;
+  color: #be185d !important;
+  border-color: #be185d !important;
   margin-right: auto;
 }
 
 .modal-button.danger:hover {
-  background: #721c24 !important;
+  background: #be185d !important;
   color: #fff !important;
 }
 
 .add-card {
-  border: 2px dashed #8b4513 !important;
+  border: 2px dashed #ec4899 !important;
   background: #fff !important;
   cursor: pointer !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -151,21 +149,22 @@ const WEBIN_STYLES_PART3 = `
 }
 
 .add-card:hover {
-  background: #e8e8c8 !important;
-  border-color: #000 !important;
+  background: #fae8ff !important;
+  border-color: #7c3aed !important;
   transform: translateY(-4px) translateZ(0) !important;
-  box-shadow: 3px 3px 0px #8b4513 !important;
+  box-shadow: 4px 4px 0px #ec4899 !important;
 }
 
 .add-card svg {
   width: 40px !important;
   height: 40px !important;
-  fill: #8b4513 !important;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  fill: #ec4899 !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), fill 0.3s ease !important;
 }
 
 .add-card:hover svg {
   transform: rotate(90deg) !important;
+  fill: #7c3aed !important;
 }
 
 .resizer {
@@ -190,16 +189,16 @@ const WEBIN_STYLES_PART3 = `
 }
 
 .content::-webkit-scrollbar-track {
-  background: #e8e8c8 !important;
+  background: #fae8ff !important;
   border-left: 1px solid #000 !important;
 }
 
 .content::-webkit-scrollbar-thumb {
-  background: #8b4513 !important;
+  background: linear-gradient(180deg, #8b5cf6, #ec4899) !important;
   border: 1px solid #000 !important;
 }
 
 .content::-webkit-scrollbar-thumb:hover {
-  background: #a0522d !important;
+  background: #ec4899 !important;
 }
 `;

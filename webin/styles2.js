@@ -5,9 +5,6 @@
 // License  : MIT License -- free to use, modify, and distribute.
 //            See LICENSE file in the project root for full license text.
 // ----------------------------------------------------------------------------
-// If this project helped you, consider starring the repository, opening a
-// pull request, or reporting issues on GitHub. Contributions are welcome.
-// ----------------------------------------------------------------------------
 //
 // styles2.js -- Extended Stylesheet (Part 2 of 3)
 // ===========================================================
@@ -23,13 +20,13 @@ const WEBIN_STYLES_PART2 = `
 .action-btn svg {
   width: 16px !important;
   height: 16px !important;
-  fill: #333 !important;
+  fill: #6b21a8 !important;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .action-btn:hover {
-  background: #8b4513 !important;
-  border-color: #8b4513 !important;
+  background: linear-gradient(135deg, #7c3aed, #ec4899) !important;
+  border-color: #000 !important;
 }
 
 .action-btn:hover svg {
@@ -37,12 +34,12 @@ const WEBIN_STYLES_PART2 = `
 }
 
 .delete-mode-btn.active {
-  background: #f8d7da !important;
-  border-color: #721c24 !important;
+  background: #fce7f3 !important;
+  border-color: #be185d !important;
 }
 
 .delete-mode-btn.active svg {
-  fill: #721c24 !important;
+  fill: #be185d !important;
 }
 
 .content {
@@ -50,7 +47,7 @@ const WEBIN_STYLES_PART2 = `
   flex: 1 !important;
   overflow-y: auto !important;
   padding: 16px !important;
-  background: #f5f5dc !important;
+  background: #fdf4ff !important;
   scroll-behavior: smooth !important;
 }
 
@@ -61,7 +58,7 @@ const WEBIN_STYLES_PART2 = `
   border-radius: 0 !important;
   padding: 14px 8px !important;
   text-align: center !important;
-  box-shadow: 3px 3px 0px #888 !important;
+  box-shadow: 3px 3px 0px #d8b4fe !important;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   cursor: pointer !important;
   height: 120px !important;
@@ -77,21 +74,21 @@ const WEBIN_STYLES_PART2 = `
 
 .card:hover {
   transform: translateY(-4px) translateZ(0) !important;
-  box-shadow: 6px 6px 0px #8b4513 !important;
-  border-color: #8b4513 !important;
+  box-shadow: 6px 6px 0px #ec4899 !important;
+  border-color: #7c3aed !important;
 }
 
 .card:active {
   transform: translateY(-1px) translateZ(0) !important;
-  box-shadow: 2px 2px 0px #8b4513 !important;
+  box-shadow: 2px 2px 0px #ec4899 !important;
   transition-duration: 0.1s !important;
 }
 
 .card p {
   line-height: 1.4 !important;
   font-size: 11px !important;
-  color: #333 !important;
-  font-weight: 500 !important;
+  color: #2e1065 !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
 }
 
@@ -104,11 +101,11 @@ const WEBIN_STYLES_PART2 = `
 .category-header {
   font-size: 12px !important;
   font-weight: 600 !important;
-  color: #666 !important;
+  color: #6b21a8 !important;
   padding: 6px 10px !important;
   margin-top: 12px !important;
   border: 1px solid #000 !important;
-  background: #e8e8c8 !important;
+  background: #fae8ff !important;
   text-transform: uppercase !important;
 }
 
@@ -127,24 +124,27 @@ const WEBIN_STYLES_PART2 = `
   padding: 10px !important;
   text-align: center !important;
   font-size: 11px !important;
-  color: #666 !important;
-  background: #e8e8c8 !important;
+  color: #701a75 !important;
+  background: #fae8ff !important;
   border-top: 2px solid #000 !important;
   text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
 }
 
 .empty-state {
   padding: 40px !important;
   text-align: center !important;
-  color: #666 !important;
+  color: #6b21a8 !important;
   grid-column: 1 / -1;
-  border: 1px dashed #000 !important;
+  border: 2px dashed #ec4899 !important;
   background: #fff !important;
 }
 
 .empty-state p {
   font-size: 13px !important;
   line-height: 1.5 !important;
+  color: #6b21a8 !important;
+  font-weight: 600 !important;
 }
 
 .modal-backdrop {
@@ -153,22 +153,22 @@ const WEBIN_STYLES_PART2 = `
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(46, 16, 101, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   animation: modal-scale-in 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .modal {
-  background: #f5f5dc !important;
+  background: #fdf4ff !important;
   padding: 20px !important;
   border-radius: 0 !important;
-  box-shadow: 6px 6px 0px #000 !important;
+  box-shadow: 6px 6px 0px #7c3aed !important;
   border: 2px solid #000 !important;
   width: 90% !important;
   max-width: 400px !important;
